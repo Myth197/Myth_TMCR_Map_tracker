@@ -1,0 +1,129 @@
+[
+  // DWS Big Key
+  {
+    "name": "Deepwood Shrine Big Key",
+    "type": "toggle",
+    "img": "images/Big Key.png",
+    "codes": "dws_bigkey"
+  },
+  // DWS Small Keys
+  {
+    "name": "Deepwood Shrine Small Key",
+    "type": "consumable",
+    "img": "images/Small Key.png",
+    "codes": "dws_smallkey",
+    "max_quantity": 4
+  },
+  // CoF Big Key
+  {
+    "name": "Cave of Flames Big Key",
+    "type": "toggle",
+    "img": "images/Big Key.png",
+    "codes": "cof_bigkey"
+  },
+  // CoF Small Keys
+  {
+    "name": "Cave of Flames Small Key",
+    "type": "consumable",
+    "img": "images/Small Key.png",
+    "codes": "cof_smallkey",
+    "max_quantity": 2
+  },
+  // FoW Big Key
+  {
+    "name": "Fortress of Winds Big Key",
+    "type": "toggle",
+    "img": "images/Big Key.png",
+    "codes": "fow_bigkey"
+  },
+  // FoW Small Keys
+  {
+    "name": "Fortress of Winds Small Key",
+    "type": "consumable",
+    "img": "images/Small Key.png",
+    "codes": "fow_smallkey",
+    "max_quantity": 4
+  },
+  // ToD Big Key
+  {
+    "name": "Temple of Droplets Big Key",
+    "type": "toggle",
+    "img": "images/Big Key.png",
+    "codes": "tod_bigkey"
+  },
+  // ToD Small Key
+  {
+    "name": "Temple of Droplets Small Key",
+    "type": "consumable",
+    "img": "images/Small Key.png",
+    "codes": "tod_smallkey",
+    "max_quantity": 4
+  },
+  // PoW Big Key
+  {
+    "name": "Palace of Winds Big Key",
+    "type": "toggle",
+    "img": "images/Big Key.png",
+    "codes": "pow_bigkey"
+  },
+  // PoW Small Keys
+  {
+    "name": "Palace of Winds Small Key",
+    "type": "consumable",
+    "img": "images/Small Key.png",
+    "codes": "pow_smallkey",
+    "max_quantity": 6
+  },
+  // DHC Big Key
+  {
+    "name": "Dark Hyrule Castle Big Key",
+    "type": "toggle",
+    "img": "images/Big Key.png",
+    "codes": "dhc_bigkey"
+  },
+  // DHC Small Keys
+  {
+    "name": "Dark Hyrule Castle Small Key",
+    "type": "consumable",
+    "img": "images/Small Key.png",
+    "codes": "dhc_smallkey",
+    "max_quantity": 5
+  },
+  // DHC Big Key KS
+  {
+    "name": "Dark Hyrule Castle Big Key",
+    "type": "toggle",
+    "img": "images/DHC Big Key.png",
+    "codes": "dhc_bigkey_ks"
+  },
+  // DHC Small Keys KS
+  {
+    "name": "Dark Hyrule Castle Small Key",
+    "type": "consumable",
+    "img": "images/DHC Small Key.png",
+    "codes": "dhc_smallkey_ks",
+    "max_quantity": 5
+  },
+  // Royal Crypt Keys
+  {
+    "name": "Royal Crypt Key",
+    "type": "consumable",
+    "img": "images/Crypt Key.png",
+    "codes": "rc_smallkey",
+    "max_quantity": 3
+  },
+  //Generic Big Key
+  {
+    "name": "Generic Big Key",
+    "type": "toggle",
+    "img": "images/Big Key.png",
+    "codes": "bigkey"
+  },
+  //Generic Small Key
+  {
+    "name": "Generic Small Key",
+    "type": "toggle",
+    "img": "images/Small Key.png",
+    "codes": "smallkey"
+  },
+]

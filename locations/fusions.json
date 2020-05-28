@@ -1,0 +1,123 @@
+
+[
+ {
+	"name":"Fusions",
+	"chest_unopened_img":"images/Kinstone Bag (Medium).png",
+	"chest_opened_img":"images/Kinstone Bag (Medium) Gray.png",	
+	"children":
+  [
+//Hyrule Town
+   {
+	"name":"Hyrule Town",
+	"children": 
+    [
+     {
+		"name":"Mayor",
+		"map_locations":
+      [
+       {
+			"map":"map",
+			"x":1460,
+			"y":1210,
+			"visibility_rules":["fusions_v"]
+       }
+      ],
+		"sections":
+      [
+       {
+			"name":"Mayor",
+			"hosted_item":"lonlonpool"
+       }
+      ]
+     },
+     {
+		"name":"Stranger",
+		"map_locations":
+      [
+       {
+			"map":"map",
+			"x":1075,
+			"y":1220,
+			"visibility_rules":["fusions_v"]
+       }
+      ],
+		"sections":
+      [
+       {
+			"name":"Stranger",
+			"hosted_item":"warptile"
+       }
+      ]
+     },
+     {
+		"name":"General Fusions",
+		"map_locations":
+      [
+       {
+			"map":"map",
+			"x":1200,
+			"y":1900,
+			"visibility_rules":["fusions_v"]
+       }
+      ],
+		"sections":
+      [
+       {
+			"name":"Minish North Chest",
+			"hosted_item":"minishnorthchest"
+       },
+       {
+			"name":"Minish West Chest",
+			"hosted_item":"minishwestchest"
+       },
+       {
+			"name":"Minish East Chest",
+			"hosted_item":"minisheastchest"
+       },
+       {
+			"name":"Minish South Chest",
+			"hosted_item":"minishsouthchest"
+       },
+       {
+			"name":"Minish Crack",
+			"hosted_item":"minishcrack"
+       },
+       {
+			"name":"Minish Path Chest",
+			"hosted_item":"minishpathchest"
+       },
+       {
+			"name":"Link House Pool",
+			"hosted_item":"linkhousepool"
+       },
+       {
+			"name":"Link House Chest",
+			"hosted_item":"linkhousechest"
+       },
+       {
+			"name":"LonLon North Chest",
+			"hosted_item":"lonlonnorthchest"
+       },
+       {
+			"name":"LonLon Path Chest",
+			"hosted_item":"lonlonpathchest"
+       },
+       {
+			"name":"School Garden Chest",
+			"hosted_item":"schoolgardenchest"
+       },
+       {
+			"name":"Pre Royal Valley Chest",
+			"hosted_item":"preroyalvalleychest"
+       },
+       {
+			"name":"Hyrule Castle Pool Right",
+			"hosted_item":"hyrulecastlepoolright"
+       },
+      ]
+     },
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,41 @@
+{
+    "shared_item_grid": 
+ {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": 
+[
+            [	"sword",	"gust",		"cane",		"boomerang",	"wilds",	"dws",		"dws_bigkey",		"dws_smallkey"		],
+            [	"shield",	"mitts",	"lamp",		"bombsremote",	"clouds",	"cof",		"cof_bigkey",		"cof_smallkey"		],
+            [	"boots",	"cape",		"ocarina",	"bowandfly",	"falls",	"fow",		"fow_bigkey",		"fow_smallkey"		],
+            [	"bottle",	"grip",		"bracelets",	"flippers",	"carlov",	"tod",		"tod_bigkey",		"tod_smallkey"		],
+            [	"jabber",	"mushroom",	"bothkeys",	"books",	"dogfood",	"pow",		"pow_bigkey",		"pow_smallkey"		],
+            [	"10hearts",	"wallet",	"quiver",	"gomode",	"rc_smallkey",	"rc",		"explicit_dhc_bigkey",	"explicit_dhc_smallkey"	],
+	    [	"spinattack",	"rockbreaker",	"dashattack",	"downthrust",	"rollattack",	"swordbeam",	"perilbeam",		"greatspin"		]
+        ]
+ },
+    "tracker_capture_item": 
+ {
+        "type": "container",
+        "content": 
+  {
+            "type": "layout",
+            "key": "shared_item_grid"
+  }
+ },
+    "tracker_default": 
+ {
+        "type": "container",
+        "width": 250,
+        "height": 240,
+        "background": "#212121",
+        "content": 
+  {
+            "dropshadow": true,
+            "margin": 5,
+            "type": "layout",
+            "key": "shared_item_grid"
+  }
+ }
+}

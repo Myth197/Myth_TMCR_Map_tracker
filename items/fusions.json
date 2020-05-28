@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Link House Tree",
+    "type": "toggle",
+    "img": "images/Kinstone Blue S.png",
+    "codes": "linkhousetree"
+  },
+  {
+    "name": "LonLon Pool",
+    "type": "toggle",
+    "img": "images/Kinstone Red E.png",
+    "codes": "lonlonpool"
+  },
+  {
+    "name": "Warp Tile",
+    "type": "toggle",
+    "img": "images/Kinstone Red W.png",
+    "codes": "warptile"
+  },
+  {
+    "name": "Minish East Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sq.png",
+    "codes": "minisheastchest"
+  },
+  {
+    "name": "Minish North Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sq.png",
+    "codes": "minishnorthchest"
+  },
+  {
+    "name": "Link House Pool",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sl.png",
+    "codes": "linkhousepool"
+  },
+  {
+    "name": "LonLon North Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sq.png",
+    "codes": "lonlonnorthchest"
+  },
+  {
+    "name": "School Garden Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green V.png",
+    "codes": "schoolgardenchest"
+  },
+  {
+    "name": "Minish Path Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green V.png",
+    "codes": "minishpathchest"
+  },
+  {
+    "name": "Pre Royal Valley Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green V.png",
+    "codes": "preroyalvalleychest"
+  },
+  {
+    "name": "Minish South Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green V.png",
+    "codes": "minishsouthchest"
+  },
+  {
+    "name": "LonLon Path Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sl.png",
+    "codes": "lonlonpathchest"
+  },
+  {
+    "name": "Minish West Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sq.png",
+    "codes": "minishwestchest"
+  },
+  {
+    "name": "Minish Crack",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sq.png",
+    "codes": "minishcrack"
+  },
+  {
+    "name": "Link House Chest",
+    "type": "toggle",
+    "img": "images/Kinstone Green Sl.png",
+    "codes": "linkhousechest"
+  },
+  {
+    "name": "Hyrule Castle Pool Right",
+    "type": "toggle",
+    "img": "images/Kinstone Red V.png",
+    "codes": "hyrulecastlepoolright"
+  },
+]

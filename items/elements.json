@@ -1,0 +1,174 @@
+[
+  // Earth
+  {
+    "name": "Earth",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "stages": [
+      {
+        "img":"images/Earth Element.png",
+        "inherit_codes": false,
+        "codes":"earth",
+      },
+      {
+        "img":"images/dws_earth.png",
+        "inherit_codes": false,
+        "codes":"earth,dws",
+      },
+      {
+        "img":"images/cof_earth.png",
+        "inherit_codes": false,
+        "codes":"earth,cof",
+      },
+      {
+        "img":"images/fow_earth.png",
+        "inherit_codes": false,
+        "codes":"earth,fow",
+      },
+      {
+        "img":"images/tod_earth.png",
+        "inherit_codes": false,
+        "codes":"earth,tod",
+      },
+      {
+        "img":"images/rc_earth.png",
+        "inherit_codes": false,
+        "codes":"earth,rc",
+      },
+      {
+        "img":"images/pow_earth.png",
+	"inherit_codes": false,
+        "codes":"earth,pow",
+      }
+     ]
+   },
+  // Fire
+  {
+    "name": "Fire",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "stages": [
+      {
+        "img":"images/Fire Element.png",
+        "inherit_codes": false,
+        "codes":"fire",
+      },
+      {
+        "img":"images/dws_fire.png",
+        "inherit_codes": false,
+        "codes":"fire,dws",
+      },
+      {
+        "img":"images/cof_fire.png",
+        "inherit_codes": false,
+        "codes":"fire,cof",
+      },
+      {
+        "img":"images/fow_fire.png",
+        "inherit_codes": false,
+        "codes":"fire,fow",
+      },
+      {
+        "img":"images/tod_fire.png",
+        "inherit_codes": false,
+        "codes":"fire,tod",
+      },
+      {
+        "img":"images/rc_fire.png",
+        "inherit_codes": false,
+        "codes":"fire,rc",
+      },
+      {
+        "img":"images/pow_fire.png",
+        "inherit_codes": false,
+        "codes":"fire,pow",
+      }
+     ]
+   },
+  // Water
+  {
+    "name": "Water",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "stages": [
+      {
+        "img":"images/Water Element.png",
+        "inherit_codes": false,
+        "codes":"water",
+      },
+      {
+        "img":"images/dws_water.png",
+        "inherit_codes": false,
+        "codes":"water,dws",
+      },
+      {
+        "img":"images/cof_water.png",
+        "inherit_codes": false,
+        "codes":"water,cof",
+      },
+      {
+        "img":"images/fow_water.png",
+        "inherit_codes": false,
+        "codes":"water,fow",
+      },
+      {
+        "img":"images/tod_water.png",
+        "inherit_codes": false,
+        "codes":"water,tod",
+      },
+      {
+        "img":"images/rc_water.png",
+        "inherit_codes": false,
+        "codes":"water,rc",
+      },
+      {
+        "img":"images/pow_water.png",
+        "inherit_codes": false,
+        "codes":"water,pow",
+      }
+     ]
+   },
+  // Wind
+  {
+    "name": "Wind",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "stages": [
+      {
+        "img":"images/Wind Element.png",
+        "inherit_codes": false,
+        "codes":"wind",
+      },
+      {
+        "img":"images/dws_wind.png",
+        "inherit_codes": false,
+        "codes":"wind,dws",
+      },
+      {
+        "img":"images/cof_wind.png",
+        "inherit_codes": false,
+        "codes":"wind,cof",
+      },
+      {
+        "img":"images/fow_wind.png",
+        "inherit_codes": false,
+        "codes":"wind,fow",
+      },
+      {
+        "img":"images/tod_wind.png",
+        "inherit_codes": false,
+        "codes":"wind,tod",
+      },
+      {
+        "img":"images/rc_wind.png",
+        "inherit_codes": false,
+        "codes":"wind,rc",
+      },
+      {
+        "img":"images/pow_wind.png",
+        "inherit_codes": false,
+        "codes":"wind,pow",
+      }
+     ]
+   }
+]

@@ -1,0 +1,12 @@
+﻿[
+  {
+    "name": "map",
+    "img": "images/big_map.png",
+    "map_locations":65
+  },  
+  {
+    "name": "ks",
+    "img": "images/big_map.png",
+    "map_locations":65
+  }
+]

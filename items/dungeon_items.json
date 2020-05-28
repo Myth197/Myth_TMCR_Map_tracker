@@ -1,0 +1,170 @@
+[
+  // DWS
+  {
+    "name": "Deepwood Shrine",
+    "type": "progressive",
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "capturable": false,
+    "loop": true,
+    "stages": [
+      {
+        "img":"images/chu.png",
+        "inherit_codes": false,
+        "img_mods": "@disabled",
+        "codes":"",
+      },
+      {
+        "img": "images/chu.png",
+        "codes": "dws",
+      }
+    ]
+  },
+ {
+   "name": "Deepwood Shrine w/ Element",
+   "type": "toggle_badged",
+   "base_item": "dws",
+   "img": "images/overlay_elements_dws.png",
+   "codes": "dws_e"
+ },
+  // COF
+  {
+    "name": "Cave of Flames",
+    "type": "progressive",
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "capturable": false,
+    "loop": true,
+    "stages": [
+      {
+        "img":"images/gleerok.png",
+        "inherit_codes": false,
+        "img_mods": "@disabled",
+        "codes":"",
+      },
+      {
+        "img": "images/gleerok.png",
+        "codes": "cof",
+      }
+    ]
+  },
+ {
+   "name": "Cave of Flames w/ Element",
+   "type": "toggle_badged",
+   "base_item": "cof",
+   "img": "images/overlay_elements_cof.png",
+   "codes": "cof_e"
+ },
+  // FOW
+  {
+    "name": "Fortress of Winds",
+    "type": "progressive",
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "capturable": false,
+    "loop": true,
+    "stages": [
+      {
+        "img":"images/mazaal.png",
+        "inherit_codes": false,
+        "img_mods": "@disabled",
+        "codes":"",
+      },
+      {
+        "img": "images/mazaal.png",
+        "codes": "fow",
+      }
+    ]
+  },
+ {
+   "name": "Fortress of Winds w/ Element",
+   "type": "toggle_badged",
+   "base_item": "fow",
+   "img": "images/overlay_elements_fow.png",
+   "codes": "fow_e"
+ },
+  // TOD
+  {
+    "name": "Temple of Droplets",
+    "type": "progressive",
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "capturable": false,
+    "loop": true,
+    "stages": [
+      {
+        "img":"images/octo.png",
+        "inherit_codes": false,
+        "img_mods": "@disabled",
+        "codes":"",
+      },
+      {
+        "img": "images/octo.png",
+        "codes": "tod",
+      }
+    ]
+  },
+ {
+   "name": "Temple of Droplets w/ Element",
+   "type": "toggle_badged",
+   "base_item": "tod",
+   "img": "images/overlay_elements_tod.png",
+   "codes": "tod_e"
+ },
+  // RC
+  {
+    "name": "Royal Crypt",
+    "type": "progressive",
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "capturable": false,
+    "loop": true,
+    "stages": [
+      {
+        "img":"images/gustaf.png",
+        "inherit_codes": false,
+        "img_mods": "@disabled",
+        "codes":"",
+      },
+      {
+        "img": "images/gustaf.png",
+        "codes": "rc",
+      },
+    ]
+  },
+ {
+   "name": "Royal Crypt w/ Element",
+   "type": "toggle_badged",
+   "base_item": "rc",
+   "img": "images/overlay_elements.png",
+   "codes": "rc_e"
+ },
+  // POW
+  {
+    "name": "Palace of Winds",
+    "type": "progressive",
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "capturable": false,
+    "loop": true,
+    "stages": [
+      {
+        "img":"images/gyorg.png",
+        "inherit_codes": false,
+        "img_mods": "@disabled",
+        "codes":"",
+      },
+      {
+        "img": "images/gyorg.png",
+        "codes": "pow",
+      },
+    ]
+  },
+ {
+   "name": "Palace of Winds w/ Element",
+   "type": "toggle_badged",
+   "base_item": "pow",
+   "img": "images/overlay_elements_pow.png",
+   "codes": "pow_e"
+ }
+]

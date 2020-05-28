@@ -1,0 +1,1107 @@
+[
+  {
+    "name":"Dungeons",
+    "chest_opened_img":"images/chest_open.png",
+    "chest_unopened_img":"images/chest_closed.png",
+    "children":
+    [
+      //DWS
+      {
+        "name":"Deepwood Shrine",
+        "short_name":"Deepwood Shrine",
+        "access_rules": [
+          "sword,jabber",
+          "sword,flippers",
+          "bombs,jabber",
+          "bombs,flippers",
+          "lights,jabber",
+          "lights,flippers",
+          "lamp,jabber",
+          "lamp,flippers",
+          "ocarina,flippers",
+          "ocarina,jabber"
+        ],
+        "map_locations": [
+          {
+            "map":"map",
+            "x":2282,
+            "y":1800
+          }
+        ],
+        "sections": [
+          {
+            "name":"Big key",
+	    "hosted_item": "dws_bigkey"
+          },
+          {
+            "name":"Small keys",
+	    "hosted_item": "dws_smallkey"
+          },
+          {
+            "name":"Upstairs Chest",
+            "access_rules": ["gust","lamp"],
+            "item_count": 1
+          },
+          {
+            "name":"Slug Room",
+            "item_count": 1
+          },
+          //At Least one small key
+          {
+            "name":"Barrel Room Northwest",
+            "access_rules": ["bombs,dws_smallkey:1","gust,dws_smallkey:1"],
+            "item_count": 1
+          },
+          {
+            "name":"West Side",
+	    "access_rules": ["dws_smallkey:1"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Statue Room",
+	    "access_rules": ["dws_smallkey:1"],
+            "item_count": 1
+          },
+          //At least two small keys
+          {
+            "name":"Mulldozer Drop (Weapon)",
+            "access_rules":["$canDamage,dws_smallkey:2,$noGust","$canDamage,dws_smallkey:2,[dws_smallkey:4],gust"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Mulldozer.png",
+            "chest_opened_img":"images/Mulldozer Gray.png",
+            "visibility_rules":["weapons_on"],
+          },
+          {
+            "name":"Mulldozer Drop",
+            "access_rules":["$canDamage,[sword],dws_smallkey:2,$noGust","$canDamage,[sword],dws_smallkey:2,[dws_smallkey:4],gust"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Mulldozer.png",
+            "chest_opened_img":"images/Mulldozer Gray.png",
+            "visibility_rules":["weapons_off"],
+          },
+          //these could be one small key with gust
+          {
+            "name":"Two Lamp Chest",
+            "access_rules": ["bombs,dws_smallkey:2","gust,dws_smallkey:1"],
+            "item_count": 1
+          },
+          {
+            "name":"Basement Switch Room Big Chest",
+            "access_rules":["dws_smallkey:2","gust,dws_smallkey:1"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Basement Switch Chest",
+            "short_name": "Basement Switch Chest",
+            "access_rules": ["gust,dws_smallkey:1","cape,dws_smallkey:2"],
+            "item_count": 1
+          },
+          {
+            "name":"Blue Warp Heart Piece",
+            "short_name":"Blue Warp Heart Piece",
+            "access_rules": ["bombs,dws_smallkey:2","gust,dws_smallkey:1","{dws_smallkey:2}"],
+            "capture_item":true,
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Piece.png",
+            "chest_opened_img":"images/Heart Piece Gray.png"
+          },
+          {
+            "name":"Puffstool Room",
+            "access_rules": ["bombs,dws_smallkey:2","gust,dws_smallkey:1"],
+	    "clear_as_group": false,
+            "item_count": 2
+          },
+          //at least three small keys unless have gust or lamp
+          //if gust then one key
+          //if lamp then two
+          {
+            "name":"Madderpillar Chest",
+            "access_rules": ["$canDamage,[sword],dws_smallkey:3,$noGust","$canDamage,[sword],dws_smallkey:2,lamp,$noGust","$canDamage,[sword],dws_smallkey:2,[dws_smallkey:4],gust","$canDamage,[sword],dws_smallkey:1,gust,lamp"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png",
+          },
+          {
+            "name":"Madderpillar Heart Piece",
+            "short_name":"Madderpillar Heart Piece",
+            "access_rules": ["dws_smallkey:2,lamp,$noGust","dws_smallkey:2,[dws_smallkey:4],gust","dws_smallkey:1,gust,lamp","{dws_smallkey:1}"],
+            "capture_item": true,
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Piece.png",
+            "chest_opened_img":"images/Heart Piece Gray.png"
+          },
+          //needs three small keys
+          {
+            "name":"Basement Big Chest",
+            "access_rules": ["gust,dws_smallkey:2,[dws_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Green Chu",
+            "access_rules": ["gust,sword,dws_bigkey","bombs,gust,dws_bigkey,[sword]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Container.png",
+            "chest_opened_img":"images/Heart Container Gray.png"
+          },
+	  {
+	    "name":"DWS Prize",
+	    "hosted_item": "dws",
+	    "access_rules": ["sword,gust,dws_bigkey","bombs,gust,dws_bigkey,[sword]"]
+	  },
+//Myth added Prize
+        ]
+      },
+      //COF
+      {
+        "name": "Cave of Flames",
+        "short_name": "Cave of Flames",
+        "access_rules":[
+          "sword,spinattack,bottle,grip,gust,bombs",
+          "sword,spinattack,bottle,grip,gust,bow",
+          "sword,spinattack,bottle,grip,gust,boomerang",
+          "sword,spinattack,bottle,grip,gust,swordbeam",
+          "sword,spinattack,bottle,grip,gust,perilbeam",
+          "sword,spinattack,bottle,grip,lights",
+          "sword,spinattack,bottle,grip,cane",
+	  "bottle,grip,cape",
+	  "bottle,cane,bombs,cape",
+          "sword,spinattack,bottle,bombs,cane",
+          "flippers,bottle,grip,gust,bombs",
+          "flippers,bottle,grip,gust,bow",
+          "flippers,bottle,grip,gust,boomerang",
+          "flippers,bottle,grip,gust,sword,swordbeam",
+          "flippers,bottle,grip,gust,sword,perilbeam",
+          "flippers,bottle,grip,lights",
+          "flippers,bottle,grip,cane",
+          "flippers,bottle,bombs,cane"
+        ],
+        "map_locations": [
+          {
+            "map": "map",
+            "x": 323,
+            "y": 200
+          }
+        ],
+        "sections": [
+          {
+            "name":"Big key",
+	    "hosted_item": "cof_bigkey"
+          },
+          {
+            "name":"Small keys",
+	    "hosted_item": "cof_smallkey"
+          },
+          {
+            "name":"Spiny Beetle Fight (Weapon)",
+            "access_rules": [
+              "cane,$canDamage",
+              "shield,$canDamage",
+              "bombs"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png",
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Spiny Beetle Fight",
+            "access_rules": [
+              "cane,$canDamage,[sword]",
+              "shield,$canDamage,[sword]",
+              "bombs"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png",
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Rupees (Weapon)",
+            "access_rules": [
+              "cane,$canDamage",
+              "shield,$canDamage",
+              "bombs","{}"],
+            "item_count": 5,
+            "visibility_rules":["rupee_mania_on,weapons_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Rupees",
+            "access_rules": [
+              "cane,$canDamage,[sword]",
+              "shield,$canDamage,[sword]",
+              "bombs","{}"],
+            "item_count": 5,
+            "visibility_rules":["rupee_mania_on,weapons_off"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Big Chest Room (Weapon)",
+            "access_rules": [
+              "cane,$canDamage",
+              "shield,$canDamage",
+              "bombs"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png",
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Big Chest Room",
+            "access_rules": [
+              "cane,$canDamage,[sword]",
+              "shield,$canDamage,[sword]",
+              "bombs"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png",
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Big Chest Room Small Chest (Weapon)",
+            "access_rules": [
+              "cane,$canDamage",
+              "shield,$canDamage",
+              "bombs"],
+            "item_count": 1,
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Big Chest Room Small Chest",
+            "access_rules": [
+              "cane,$canDamage,[sword]",
+              "shield,$canDamage,[sword]",
+              "bombs"],
+            "item_count": 1,
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Rollobite Chest (Weapon)",
+            "access_rules": [
+              "cane,$canDamage",
+              "shield,$canDamage",
+              "bombs"],
+            "item_count": 1,
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Rollobite Chest",
+            "access_rules": [
+              "cane,$canDamage,[sword]",
+              "shield,$canDamage,[sword]",
+              "bombs"],
+            "item_count": 1,
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Rollobite Pillar Chest (Weapon)",
+            "access_rules": [
+              "cane,$canDamage",
+              "shield,$canDamage",
+              "bombs"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Pillar Chest.png",
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Rollobite Pillar Chest",
+            "access_rules": [
+              "cane,$canDamage,[sword]",
+              "shield,$canDamage,[sword]",
+              "bombs"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Pillar Chest.png",
+            "visibility_rules":["weapons_off"]
+          },
+          //At Least One Small Key
+          {
+            "name":"Spiny Chu Pillar Chest",
+            "access_rules": ["cane,sword,cof_smallkey:1"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Pillar Chest.png"
+          },
+          {
+            "name":"Bomb Wall Heart Piece",
+            "short_name":"Bomb Wall Heart Piece",
+            "access_rules": ["bombs,sword,cof_smallkey:1",
+              "{cane,$canDamage}",
+              "{shield,$canDamage}",
+              "{bombs}"],
+            "capture_item": true,
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Piece.png",
+            "chest_opened_img":"images/Heart Piece Gray.png"
+          },
+          {
+            "name":"Spiny Chu Fight",
+            "access_rules": [
+	      "cane,sword,cof_smallkey:1",
+              "shield,sword,cof_smallkey:1",
+	      "bombs,sword,cof_smallkey:1"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          //At Least two small keys
+          {
+            "name":"Pre Lava Basement Room",
+            "access_rules": ["cane,sword,cof_smallkey:2"],
+	    "clear_as_group": false,
+            "item_count": 2
+          },
+          {
+            "name":"Blade Chest",
+            "access_rules": ["cane,sword,cof_smallkey:2"],
+            "item_count": 1
+          },
+          {
+            "name":"Lava Basement (Left,Right)",
+            "access_rules": ["cane,sword,cof_smallkey:2"],
+	    "clear_as_group": false,
+            "item_count": 2
+          },
+          {
+            "name":"Lava Basement (Center)",
+            "access_rules": ["cane,sword,cof_smallkey:2"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Gleerok",
+            "access_rules": ["cane,sword,cof_smallkey:2,cof_bigkey"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Container.png",
+            "chest_opened_img":"images/Heart Container Gray.png"
+          },
+	  {
+	    "name":"CoF Prize",
+	    "hosted_item": "cof",
+	    "access_rules": ["cane,sword,cof_smallkey:2,cof_bigkey"]
+	  },
+//Myth added Prize
+        ]
+      },
+      //FOW
+      {
+        "name": "Fortress of Winds",
+        "access_rules":["sword3,spinattack,cape,kinstoneWilds:3",
+	   "sword3,spinattack,boots,bow,kinstoneWilds:3",
+	   "sword3,spinattack,boots,flippers,kinstoneWilds:3"],
+        "short_name": "Fortress of Winds",
+        "codes":"fow",
+        "map_locations": [
+          {
+            "map": "map",
+            "x":592,
+            "y":1800
+          }
+        ],
+        "sections": [
+          {
+            "name":"Big key",
+	    "hosted_item": "fow_bigkey"
+          },
+          {
+            "name":"Small keys",
+	    "hosted_item": "fow_smallkey"
+          },
+          {
+            "name":"Entrance Far Left",
+            "access_rules": ["mitts"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_yellow.png",
+            "chest_opened_img":"images/chest_yellow_open.png"
+          },
+          {
+            "name":"Wizzrobe Fight",
+            "access_rules": ["mitts"],
+            "item_count": 1
+          },
+          {
+            "name":"Left Side Mitts Chests (F2 & F3)",
+            "access_rules":["bow,mitts"],
+	    "clear_as_group": false,
+            "item_count": 2,
+            "chest_unopened_img":"images/chest_yellow.png",
+            "chest_opened_img":"images/chest_yellow_open.png"
+          },
+          {
+            "name":"Left Side Rupees",
+            "access_rules": ["bow"],
+            "item_count": 5,
+            "visibility_rules":["rupee_mania_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Left Side Rupees (Visible 1)",
+            "access_rules": ["bow","{}"],
+            "item_count": 1,
+	    "capture_item": true,
+            "visibility_rules":["rupee_mania_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Left Side Rupees (Visible 2)",
+            "access_rules": ["bow","{}"],
+            "item_count": 1,
+	    "capture_item": true,
+            "visibility_rules":["rupee_mania_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Eyegores",
+            "access_rules":["bow"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Left Side Key Drop",
+            "access_rules":["bow"],
+            "item_count": 1,
+            "chest_unopened_img":"images/lever.png",
+            "chest_opened_img":"images/lever pull.png"
+          },
+          {
+            "name":"2 Lever Room",
+            "short_name":"2 Lever Room",
+	    "clear_as_group": false,
+            "item_count": 2
+          },
+          {
+            "name":"Right Side Mitts Chests (F2 & F3)",
+            "access_rules":["mitts"],
+	    "clear_as_group": false,
+            "item_count": 2,
+            "chest_unopened_img":"images/chest_yellow.png",
+            "chest_opened_img":"images/chest_yellow_open.png"
+          },
+          {
+            "name":"Right Side Key Drop",
+            "item_count": 1,
+            "chest_unopened_img":"images/lever.png",
+            "chest_opened_img":"images/lever pull.png"
+          },
+          {
+            "name":"Far Right Heart Piece",
+            "short_name":"Far Right Heart Piece",
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Piece.png",
+            "chest_opened_img":"images/Heart Piece Gray.png"
+          },
+          {
+            "name":"Entrance Big Rupee",
+            "access_rules": ["mitts","{}"],
+            "item_count": 1,
+	    "capture_item": true,
+            "visibility_rules":["rupee_mania_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Pedestal Chest",
+            "access_rules":["bow"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Center Path Switch",
+            "access_rules":["mitts"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_yellow.png",
+            "chest_opened_img":"images/chest_yellow_open.png"
+          },
+          //Everything past here needs two keys
+          {
+            "name":"Mitts Chest",
+            "short_name":"Mitts Chest",
+            "access_rules":["bow,bombs,fow_smallkey:1,[fow_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Bombable Wall Small Chest",
+            "access_rules":["bow,bombs,mitts,fow_smallkey:1,[fow_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_yellow.png",
+            "chest_opened_img":"images/chest_yellow_open.png"
+          },
+          {
+            "name":"Clone Puzzle Drop",
+            "access_rules":["bow,fow_smallkey:1,[fow_smallkey:2]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Statue.png",
+            "chest_opened_img":"images/Statue Gray.png"
+          },
+          //Everything past here needs three keys
+          {
+            "name":"Minish Dirt Room Drop",
+            "access_rules":["bow,mitts,fow_smallkey:2,[fow_smallkey:3]","{bow,fow_smallkey:2,[fow_smallkey:3]}"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Floor Switch.png",
+            "chest_opened_img":"images/Floor Switch On.png"
+          },
+          //Next one needs four small keys
+          {
+            "name":"Right Side Moldorm Pots",
+            "item_count":2,
+            "chest_unopened_img":"images/pot.png",
+            "chest_opened_img":"images/pot Gray.png",
+            "clear_as_group": false,
+            "access_rules":["bow,mitts,fow_smallkey:2,[fow_smallkey:3]"],
+            "visibility_rules":["obscure_on"]
+          },
+          {
+            "name":"Skull Room Chest",
+            "access_rules":["bow,mitts,fow_smallkey:3,[fow_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          //Big Key
+          {
+            "name":"Mazaal",
+            "access_rules":["bow,mitts,fow_bigkey"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Container.png",
+            "chest_opened_img":"images/Heart Container Gray.png"
+          },
+	  {
+	    "name":"FoW Prize",
+	    "hosted_item": "fow",
+	    "access_rules":["bow,mitts,fow_bigkey"]
+	  },
+//Myth added Prize
+        ]
+      },
+      //Temple of Droplets
+      {
+        "name": "Temple of Droplets",
+        "short_name": "Temple of Droplets",
+        "access_rules":[
+          "llrkey,sword,flippers",
+          "llrkey,bombs,flippers",
+          "llrkey,lamp,flippers",
+          "llrkey,lights,flippers",
+          "sword,flippers,mitts",
+          "bombs,flippers,mitts",
+          "lamp,flippers,mitts",
+          "lights,flippers,mitts",
+          "cape,sword",
+          "cape,bombs,",
+          "cape,lamp",
+          "cape,lights",
+          "ocarina,flippers",
+          "ocarina,cape"],
+        "codes":"tod",
+        "map_locations": [
+          {
+            "map":"map",
+            "x":2337,
+            "y":1035
+          }
+        ],
+        "sections": [
+          {
+            "name":"Small keys",
+	    "hosted_item": "tod_smallkey"
+          },
+          //Need big key
+          {
+            "name":"Left Path Rupees",
+            "item_count": 5,
+            "visibility_rules":["rupee_mania_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Overhang Chest",
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Upper Water Rupees",
+            "access_rules": ["flippers"],
+            "item_count": 6,
+            "visibility_rules":["rupee_mania_on, obscure_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Lower Water Rupees",
+            "access_rules": ["flippers,gust","flippers,cape"],
+            "item_count": 6,
+            "visibility_rules":["rupee_mania_on, obscure_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Underwater Pot",
+            "access_rules":["flippers,gust","flippers,cape"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Dive.png",
+            "chest_opened_img":"images/Dive Gray.png"
+          },
+          //Need two keys
+          {
+            "name":"Post Ice Madderpillar Chest",
+            "access_rules":["gust,flippers,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]","lamp,cape,gust,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Ice Puzzle Frozen Chest (Weapon)",
+            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,cape,gust,$canDamage,tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_frozen.png",
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Ice Puzzle Frozen Chest",
+            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,cape,gust,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_frozen.png",
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Ice Basement Frozen Chest (Weapon)",
+            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_frozen.png",
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Ice Basement Frozen Chest",
+            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,[sword],cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_frozen.png",
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Ice Basement Free Chest (Weapon)",
+            "access_rules":["gust,flippers,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Ice Basement Free Chest",
+            "access_rules":["gust,flippers,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,[sword],cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "visibility_rules":["weapons_off"]
+          },
+          //END OF LEFT PATH
+          //EVERYTHING ELSE NEEDS GUST/FLIPPERS OR LAMP
+          {
+            "name":"Right Path Ice Walkway Chests",
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:2","lamp"],
+	    "clear_as_group": false,
+            "item_count": 2
+          },
+          {
+            "name":"Right Path Ice Walkway Pot",
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:2","lamp"],
+            "item_count": 1,
+            "chest_unopened_img":"images/pot.png",
+            "chest_opened_img":"images/pot Gray.png",
+            "visibility_rules":["obscure_on"]
+          },
+          {
+            "name":"Blue Chu Frozen Chest",
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:2","lamp"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_frozen.png"
+          },
+          //blue chu is behind small key
+          {
+            "name":"Blue Chu",
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:3,[tod_smallkey:4]","gust,lamp,sword,tod_smallkey:2,[tod_smallkey:4]","gust,lamp,bombs,[sword],tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Post Blue Chu Frozen Chest",
+            "access_rules":["lamp"],
+            "item_count": 1,
+            "chest_unopened_img":"images/chest_frozen.png"
+          },
+          {
+            "name":"Dark Maze (Weapon)",
+            "access_rules":["lamp,$canDamage"],
+	    "clear_as_group": false,
+            "item_count": 3,
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Dark Maze",
+            "access_rules":["lamp,$canDamage,[sword]"],
+	    "clear_as_group": false,
+            "item_count": 3,
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Dark Maze Bomb Wall (Weapon)",
+            "access_rules":["lamp,bombs"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Mulldozer.png",
+            "chest_opened_img":"images/Mulldozer Gray.png",
+            "visibility_rules":["weapons_on"]
+          },
+          {
+            "name":"Dark Maze Bomb Wall",
+            "access_rules":["lamp,bombs,[sword]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Mulldozer.png",
+            "chest_opened_img":"images/Mulldozer Gray.png",
+            "visibility_rules":["weapons_off"]
+          },
+          {
+            "name":"Right Path Rupees (Weapon)",
+            "access_rules": ["gust,cape,flippers,[lamp],tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,tod_smallkey:2,[tod_smallkey:4]","gust,cape,flippers,lamp,$canDamage,tod_smallkey:2,[tod_smallkey:3]"],
+            "item_count": 5,
+            "visibility_rules":["rupee_mania_on,weapons_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Right Path Rupees",
+            "access_rules": ["gust,cape,flippers,[lamp],tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]","gust,cape,flippers,lamp,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:3]"],
+            "item_count": 5,
+            "visibility_rules":["rupee_mania_on,weapons_off"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          //behind small key
+          {
+            "name":"Octo",
+            "access_rules":["gust,flippers,lamp,bombs,sword3,spinattack,tod_smallkey:3,[tod_smallkey:4]","cape,[flippers],lamp,bombs,sword3,spinattack,tod_smallkey:2,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Container.png",
+            "chest_opened_img":"images/Heart Container.png"
+          },
+	  {
+	    "name":"ToD Prize",
+	    "hosted_item": "tod",
+	    "access_rules": ["gust,flippers,lamp,bombs,sword3,spinattack,tod_smallkey:3,[tod_smallkey:4]","cape,[flippers],lamp,bombs,sword3,spinattack,tod_smallkey:2,[tod_smallkey:4]"]
+	  },
+        ]
+      },
+	//Royal Crypt
+	{
+        	"name": "Royal Crypt",
+        	"short_name": "Royal Crypt",
+        	"codes":"rc",
+                "access_rules":["gravekey,sword4,boots,spinattack,[lamp]"],
+                "map_locations": [
+                  {
+                    "map":"map",
+                    "x":827,
+                    "y":150
+                  }
+                ],
+                "sections": [
+          	{
+	            "name":"Small keys",
+		    "hosted_item": "rc_smallkey"
+          	},
+		{
+                    "name":"Gibdos",
+            	    "item_count": 2
+                },
+		{
+                    "name":"Key drops",
+		    "access_rules":["rc_smallkey:1"],
+            	    "item_count": 2
+                },
+                {
+                    "name":"King Gustaf",
+	    	    "hosted_item": "rc",
+                    "access_rules": ["lamp,rc_smallkey:3"]
+                }
+	    ]
+      },
+      //POW
+      {
+        "name": "Palace of Winds",
+        "short_name": "Palace of Winds",
+        "codes":"pow",
+        "access_rules": ["bombs,kinstoneFalls,grip,kinstoneClouds:5,mitts,sword4,spinattack,[lamp]",
+	  "bombs,kinstoneFalls,grip,kinstoneClouds:5,cape,sword4,spinattack,[lamp]"],
+        "map_locations": [
+          {
+            "map": "map",
+            "x": 2303,
+            "y": 250,
+          }
+        ],
+        "sections": [
+          {
+            "name":"Big key",
+	    "hosted_item": "pow_bigkey"
+          },
+          {
+            "name":"Small keys",
+	    "hosted_item": "pow_smallkey"
+          },
+          {
+            "name":"Firebar Grate",
+            "access_rules": ["cape"],
+            "item_count": 1
+          },
+          {
+            "name":"Wizzrobe Platform Fight",
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Rupees",
+            "access_rules": ["cape,[cane]"],
+            "item_count": 5,
+            "visibility_rules":["rupee_mania_on"],
+            "chest_unopened_img":"images/Rupee (Green).png",
+            "chest_opened_img":"images/Rupee (Green).png"
+          },
+          {
+            "name":"Pot Puzzle",
+            "access_rules":["cape,cane,bracelets","cape,cane,pow_bigkey,pow_smallkey:2,[pow_smallkey:4],[bracelet]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Switch.png",
+            "chest_opened_img":"images/Switch On.png"
+          },
+          //Need one key
+          {
+            "name":"Moblin Archer Chest",
+            "access_rules":["cape,[cane],pow_smallkey:1"],
+            "item_count": 1
+          },
+          {
+            "name":"Flail Soldiers",
+            "access_rules":["cape,[cane],pow_smallkey:1"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Chain Soldier.png",
+            "chest_opened_img":"images/Chain Soldier Gray.png"
+          },
+          //Need two keys
+          {
+            "name":"Spark Chest",
+            "access_rules":["cape,[cane],pow_smallkey:2,[pow_smallkey:5]"],
+            "item_count": 1
+          },
+          //Need three keys
+          {
+            "name":"Pre Big Key Door Big Chest",
+            "access_rules":["cape,[cane],pow_smallkey:3,[pow_smallkey:6]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          //SECOND HALF
+          //Need Big Key
+          {
+            "name":"Dark Room Big",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:1,[pow_smallkey:3]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Dark Room Small",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:1,[pow_smallkey:3]"],
+            "item_count": 1
+          },
+          {
+            "name":"Roller Chest",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:1,[pow_smallkey:3]"],
+            "item_count": 1
+          },
+          //Need four keys
+          {
+            "name":"Twin Wizzrobe Fight",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:2,[pow_smallkey:4]"],
+            "item_count": 1
+          },
+          {
+            "name":"Fire Wizzrobe Fight",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:2,[pow_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Heart Piece",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:2,[pow_smallkey:4]","{cape,cane,pow_smallkey:1}"],
+            "capture_item": true,
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Piece.png",
+            "chest_opened_img":"images/Heart Piece Gray.png"
+          },
+          {
+            "name":"Switch Chest",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:2,[pow_smallkey:4]"],
+            "item_count": 1
+          },
+          //Need five keys
+          {
+            "name":"Bombarossa Maze",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:3,[pow_smallkey:5]"],
+            "item_count": 1
+          },
+          //Need six keys
+          {
+            "name":"Block Maze Room",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:4,[pow_smallkey:6]"],
+            "item_count": 1
+          },
+          {
+            "name":"Block Maze Detour",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:4,[pow_smallkey:6]"],
+            "item_count": 1
+          },
+          {
+            "name":"Gyorg",
+            "access_rules":["cape,[cane],pow_bigkey,pow_smallkey:4,[pow_smallkey:6]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Heart Container.png",
+            "chest_opened_img":"images/Heart Container Gray.png"
+          },
+	  {
+	    "name":"PoW Prize",
+	    "hosted_item": "pow",
+	    "access_rules": ["cape,[cane],pow_bigkey,pow_smallkey:4,[pow_smallkey:6]"]
+	  },
+//Myth added Prize
+        ]
+      },
+      //Dark Hyrule Castle
+      {
+        "name": "Dark Hyrule Castle",
+        "short_name": "Dark Hyrule Castle",
+        "codes":"dhc",
+        "access_rules": ["DHC_open","DHC_ped","DHC_elements,earth,fire,water,wind","DHC_swords,sword5"],
+        "map_locations": [
+          {
+            "map": "map",
+            "x": 1326,
+            "y": 130
+          }
+        ],
+        "sections": [
+          {
+            "name":"Small keys",
+	    "hosted_item": "dhc_smallkey"
+          },
+              {
+                "name":"2 Element Fusion",
+            	"visibility_rules":["DHC_ped"],
+                "access_rules":["earth,fire","earth,water","earth,wind","fire,water","fire,wind","water,wind"],
+                "item_count": 1,
+                "chest_unopened_img":"images/Fire Element.png",
+                "chest_opened_img":"images/Fire Element.png"
+              },
+              {
+                "name":"3 Element Fusion",
+            	"visibility_rules":["DHC_ped"],
+                "access_rules":["earth,fire,water","fire,water,wind","earth,water,wind","earth,fire,wind"],
+                "item_count": 1,
+                "chest_unopened_img":"images/Water Element.png",
+                "chest_opened_img":"images/Water Element.png"
+              },
+              {
+                "name":"4 Element Fusion",
+            	"visibility_rules":["DHC_ped"],
+                "access_rules":["earth,fire,water,wind"],
+                "item_count": 1,
+                "chest_unopened_img":"images/Wind Element.png",
+                "chest_opened_img":"images/Wind Element.png"
+              },
+          {
+            "name": "Stone King",
+            "access_rules": ["bombs,sword5,spinattack"],
+            "item_count": 1,
+            "chest_unopened_img":"images/King Stone.png",
+            "chest_opened_img":"images/King.png"
+          },
+          {
+            "name":"Platform Chest",
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Blade Chest",
+            "access_rules":["sword5,spinattack"],
+            "item_count": 1
+          },
+          //Needs one key
+          {
+            "name":"Post Throne Big Chest",
+            "access_rules":["dhc_smallkey:1,bombs,sword5,spinattack"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
+          },
+          {
+            "name":"Northwest Tower",
+            "access_rules":["bombs,sword5,spinattack,cape,bow,dhc_smallkey:1"],
+            "item_count": 1
+          },
+          {
+            "name":"Southeast Tower",
+            "access_rules":["bombs,sword5,spinattack,cape,boomerang,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,bow,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,swordbeam,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,perilbeam,lamp,dhc_smallkey:1"],
+            "item_count": 1
+          },
+          {
+            "name":"Southwest Tower",
+            "access_rules":["bombs,sword5,spinattack,cape,boomerang,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,bow,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,lights,dhc_smallkey:1"],
+            "item_count": 1
+          },
+          {
+            "name":"Northeast Tower",
+            "access_rules":["bombs,sword5,spinattack,cape,boomerang,lamp,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,swordbeam,lamp,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,perilbeam,lamp,dhc_smallkey:1",
+	       "bombs,sword5,spinattack,cape,bow,lamp,dhc_smallkey:1"],
+            "item_count": 1
+          },
+          //Needs five keys
+          {
+            "name":"Big key",
+            "access_rules":["bombs,sword5,spinattack,cape,boomerang,dhc_smallkey:5",
+	       "bombs,sword5,spinattack,cape,bow,dhc_smallkey:5",
+	       "bombs,sword5,spinattack,cape,swordbeam,dhc_smallkey:5",
+	       "bombs,sword5,spinattack,cape,perilbeam,dhc_smallkey:5"],
+	    "hosted_item": "dhc_bigkey"
+          },
+          //Needs big key
+          {
+            "name":"Vaati",
+            "access_rules":["sword5,spinattack,bombs,cape,bow,cane,gust,[lamp],dhc_bigkey,dhc_smallkey:1"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Vaati.png",
+            "chest_opened_img":"images/Vaati Gray.png"
+          }
+        ]
+      }
+    ]
+  }
+]
