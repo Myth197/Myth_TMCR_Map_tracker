@@ -32,6 +32,8 @@ function autotracker_started()
   POW_KEY_PREV_VALUE = 0
   DHC_KEY_COUNT = 0
   DHC_KEY_PREV_VALUE = 0
+  DHCKS_KEY_COUNT = 0
+  DHCKS_KEY_PREV_VALUE = 0
   RC_KEY_COUNT = 0
   RC_KEY_PREV_VALUE = 0
 end
@@ -444,7 +446,7 @@ function updateWildsUsedFixed(segment, locationData)
   local item = Tracker:FindObjectForCode("wilds")
   if item then
     WildsFused = 0
-    for i=1, #locationData, 1 do
+    for i=1, 3, 1 do
       local address = locationData[i][1]
       local flag = locationData[i][2]
       local value = ReadU8(segment,address)
@@ -516,7 +518,7 @@ function updateCloudsUsedFixed(segment, locationData)
   local item = Tracker:FindObjectForCode("clouds")
   if item then
     CloudsFused = 0
-    for i=1, #locationData, 1 do
+    for i=1, 5, 1 do
       local address = locationData[i][1]
       local flag = locationData[i][2]
       local value = ReadU8(segment,address)
@@ -631,11 +633,11 @@ function updateSmallKeys(segment, code, address)
     end
     DHC_KEY_PREV_VALUE = ReadU8(segment, address)
   elseif code == "dhc_smallkey_ks" then
-    if ReadU8(segment, address) > DHC_KEY_PREV_VALUE then
-      DHC_KEY_COUNT = DHC_KEY_COUNT + 1
-      item.AcquiredCount = DHC_KEY_COUNT
+    if ReadU8(segment, address) > DHCKS_KEY_PREV_VALUE then
+      DHCKS_KEY_COUNT = DHCKS_KEY_COUNT + 1
+      item.AcquiredCount = DHCKS_KEY_COUNT
     end
-    DHC_KEY_PREV_VALUE = ReadU8(segment, address)
+    DHCKS_KEY_PREV_VALUE = ReadU8(segment, address)
   elseif code == "rc_smallkey" then
     if ReadU8(segment, address) > RC_KEY_PREV_VALUE then
       RC_KEY_COUNT = RC_KEY_COUNT + 1
@@ -1021,7 +1023,6 @@ function updateLocations(segment)
   updateSectionChestCountFromByteAndFlag(segment, "@North Field Heart Piece/North Field Heart Piece", 0x2002d2b, 0x08)
 
   --HYRULE TOWN
-  updateSectionChestCountFromByteAndFlag(segment, "@Eastern Shops/Simons Simulations", 0x2002c9c, 0x02)
   updateSectionChestCountFromByteAndFlag(segment, "@Anju/Anju", 0x2002ca5, 0x80)
   updateSectionChestCountFromByteAndFlag(segment, "@Hearth Ledge/Hearth Ledge", 0x2002cd5, 0x01)
   updateSectionChestCountFromByteAndFlag(segment, "@School/Roof Chest", 0x2002cd5, 0x02)
@@ -1032,8 +1033,8 @@ function updateLocations(segment)
 --  updateSectionChestCountFromByteAndFlag(segment, "@Stockwell's Shop/Wallet Spot (80 Rupees)", 0x2002ce6, 0x20)
 --  updateSectionChestCountFromByteAndFlag(segment, "@Stockwell's Shop/Quiver Spot (600 Rupees)", 0x2002ce6, 0x40)
   updateSectionChestCountFromByteAndFlag(segment, "@Library/Yellow Library Minish", 0x2002ceb, 0x01)
-  updateSectionChestCountFromByteAndFlag(segment, "@Eastern Shops/Figurine House Heart Piece", 0x2002cf2, 0x10)
-  decreaseChestCount(segment, "@Eastern Shops/Figurine House", {{0x2002cf2, 0x20},{0x2002cf2,0x40},{0x2002cf2,0x80}})
+  updateSectionChestCountFromByteAndFlag(segment, "@Western Shops/Figurine House Heart Piece", 0x2002cf2, 0x10)
+  decreaseChestCount(segment, "@Western Shops/Figurine House", {{0x2002cf2, 0x20},{0x2002cf2,0x40},{0x2002cf2,0x80}})
   updateSectionChestCountFromByteAndFlag(segment, "@Hearth/Hearth Back Door Heart Piece", 0x2002cf3, 0x01)
   updateSectionChestCountFromByteAndFlag(segment, "@School/Pull the Statue", 0x2002cfc, 0x40)
   updateSectionChestCountFromByteAndFlag(segment, "@Town's Cave/Town Basement Left", 0x2002cfc, 0x80)
@@ -1319,8 +1320,9 @@ function updateKeys(segment)
     updateSmallKeys(segment, "rc_smallkey", 0x2002ea3)
 
 --Misc
+    updateSectionChestCountFromByteAndFlag(segment, "@Western Shops/Simons Simulations", 0x2002c9c, 0x02)
     updateSectionChestCountFromByteAndFlag(segment, "@Syrup's Hut/Witch's Item (60 Rupees)", 0x2002ea4, 0x04)
-    updateSectionChestCountFromByteAndFlag(segment, "@Eastern Shops/Rem", 0x2002ea4, 0x08)
+    updateSectionChestCountFromByteAndFlag(segment, "@Western Shops/Rem", 0x2002ea4, 0x08)
     updateSectionChestCountFromByteAndFlag(segment, "@Julietta's House/Bookshelf", 0x2002ea4, 0x10)
     updateSectionChestCountFromByteAndFlag(segment, "@Dr. Left's House/Dr. Left's House", 0x2002ea4, 0x20)
     updateSectionChestCountFromByteAndFlag(segment, "@Lake Cabin/Lake Cabin Book", 0x2002ea4, 0x40)

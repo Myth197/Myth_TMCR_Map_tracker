@@ -618,6 +618,14 @@
             "name":"Small keys",
 	    "hosted_item": "tod_smallkey"
           },
+          {
+            "name":"Small Key Locked Ice Block",
+	    "access_rules":["tod_smallkey:1,[tod_smallkey:4]"],
+            "item_count": 1,
+            "chest_unopened_img":"images/Ice Block.png",
+            "chest_opened_img":"images/Ice Block Melt.png"
+          },	
+
           //Need big key
           {
             "name":"Left Path Rupees",
@@ -658,48 +666,48 @@
           //Need two keys
           {
             "name":"Post Ice Madderpillar Chest",
-            "access_rules":["gust,flippers,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]","lamp,cape,gust,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,$canDamage,[sword],tod_smallkey:1,[tod_smallkey:4]","lamp,cape,gust,$canDamage,[sword],tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "chest_unopened_img":"images/Big Chest.png",
             "chest_opened_img":"images/Big Chest open.png"
           },
           {
             "name":"Ice Puzzle Frozen Chest (Weapon)",
-            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,cape,gust,$canDamage,tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,lamp,tod_smallkey:1,[tod_smallkey:4]","lamp,cape,gust,$canDamage,tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "chest_unopened_img":"images/chest_frozen.png",
             "visibility_rules":["weapons_on"]
           },
           {
             "name":"Ice Puzzle Frozen Chest",
-            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,cape,gust,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,lamp,tod_smallkey:1,[tod_smallkey:4]","lamp,cape,gust,$canDamage,[sword],tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "chest_unopened_img":"images/chest_frozen.png",
             "visibility_rules":["weapons_off"]
           },
           {
             "name":"Ice Basement Frozen Chest (Weapon)",
-            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,lamp,tod_smallkey:1,[tod_smallkey:4]","lamp,$canDamage,cape,tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "chest_unopened_img":"images/chest_frozen.png",
             "visibility_rules":["weapons_on"]
           },
           {
             "name":"Ice Basement Frozen Chest",
-            "access_rules":["gust,flippers,lamp,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,[sword],cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,lamp,tod_smallkey:1,[tod_smallkey:4]","lamp,$canDamage,[sword],cape,tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "chest_unopened_img":"images/chest_frozen.png",
             "visibility_rules":["weapons_off"]
           },
           {
             "name":"Ice Basement Free Chest (Weapon)",
-            "access_rules":["gust,flippers,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,tod_smallkey:1,[tod_smallkey:4]","lamp,$canDamage,cape,tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "visibility_rules":["weapons_on"]
           },
           {
             "name":"Ice Basement Free Chest",
-            "access_rules":["gust,flippers,tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,[sword],cape,tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,tod_smallkey:1,[tod_smallkey:4]","lamp,$canDamage,[sword],cape,tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "visibility_rules":["weapons_off"]
           },
@@ -707,13 +715,13 @@
           //EVERYTHING ELSE NEEDS GUST/FLIPPERS OR LAMP
           {
             "name":"Right Path Ice Walkway Chests",
-            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:2","lamp"],
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1","lamp"],
 	    "clear_as_group": false,
             "item_count": 2
           },
           {
             "name":"Right Path Ice Walkway Pot",
-            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:2","lamp"],
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1","lamp"],
             "item_count": 1,
             "chest_unopened_img":"images/pot.png",
             "chest_opened_img":"images/pot Gray.png",
@@ -721,14 +729,14 @@
           },
           {
             "name":"Blue Chu Frozen Chest",
-            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:2","lamp"],
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1","lamp"],
             "item_count": 1,
             "chest_unopened_img":"images/chest_frozen.png"
           },
           //blue chu is behind small key
           {
             "name":"Blue Chu",
-            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:3,[tod_smallkey:4]","gust,lamp,sword,tod_smallkey:2,[tod_smallkey:4]","gust,lamp,bombs,[sword],tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:2,[tod_smallkey:4]","gust,lamp,sword,tod_smallkey:1,[tod_smallkey:4]","gust,lamp,bombs,[sword],tod_smallkey:1,[tod_smallkey:4]"],
             "item_count": 1,
             "chest_unopened_img":"images/Big Chest.png",
             "chest_opened_img":"images/Big Chest open.png"
@@ -771,7 +779,7 @@
           },
           {
             "name":"Right Path Rupees (Weapon)",
-            "access_rules": ["gust,cape,flippers,[lamp],tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,tod_smallkey:2,[tod_smallkey:4]","gust,cape,flippers,lamp,$canDamage,tod_smallkey:2,[tod_smallkey:3]"],
+            "access_rules": ["gust,cape,flippers,[lamp],tod_smallkey:1,[tod_smallkey:4]","lamp,$canDamage,tod_smallkey:1,[tod_smallkey:4]","gust,cape,flippers,lamp,$canDamage,tod_smallkey:1,[tod_smallkey:3]"],
             "item_count": 5,
             "visibility_rules":["rupee_mania_on,weapons_on"],
             "chest_unopened_img":"images/Rupee (Green).png",
@@ -779,7 +787,7 @@
           },
           {
             "name":"Right Path Rupees",
-            "access_rules": ["gust,cape,flippers,[lamp],tod_smallkey:2,[tod_smallkey:4]","lamp,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:4]","gust,cape,flippers,lamp,$canDamage,[sword],tod_smallkey:2,[tod_smallkey:3]"],
+            "access_rules": ["gust,cape,flippers,[lamp],tod_smallkey:1,[tod_smallkey:4]","lamp,$canDamage,[sword],tod_smallkey:1,[tod_smallkey:4]","gust,cape,flippers,lamp,$canDamage,[sword],tod_smallkey:1,[tod_smallkey:3]"],
             "item_count": 5,
             "visibility_rules":["rupee_mania_on,weapons_off"],
             "chest_unopened_img":"images/Rupee (Green).png",
@@ -788,7 +796,7 @@
           //behind small key
           {
             "name":"Octo",
-            "access_rules":["gust,flippers,lamp,bombs,sword3,spinattack,tod_smallkey:3,[tod_smallkey:4]","cape,[flippers],lamp,bombs,sword3,spinattack,tod_smallkey:2,[tod_smallkey:4]"],
+            "access_rules":["gust,flippers,lamp,bombs,sword3,spinattack,tod_smallkey:2,[tod_smallkey:4]","cape,[flippers],lamp,bombs,sword3,spinattack,tod_smallkey:1,[tod_smallkey:3]"],
             "item_count": 1,
             "chest_unopened_img":"images/Heart Container.png",
             "chest_opened_img":"images/Heart Container.png"
@@ -796,7 +804,7 @@
 	  {
 	    "name":"ToD Prize",
 	    "hosted_item": "tod",
-	    "access_rules": ["gust,flippers,lamp,bombs,sword3,spinattack,tod_smallkey:3,[tod_smallkey:4]","cape,[flippers],lamp,bombs,sword3,spinattack,tod_smallkey:2,[tod_smallkey:4]"]
+	    "access_rules": ["gust,flippers,lamp,bombs,sword3,spinattack,tod_smallkey:2,[tod_smallkey:4]","cape,[flippers],lamp,bombs,sword3,spinattack,tod_smallkey:1,[tod_smallkey:3]"]
 	  },
         ]
       },
@@ -1005,6 +1013,10 @@
             "name":"Small keys",
 	    "hosted_item": "dhc_smallkey"
           },
+          {
+            "name":"Big key",
+	    "hosted_item": "dhc_bigkey"
+          },
               {
                 "name":"2 Element Fusion",
             	"visibility_rules":["DHC_ped"],
@@ -1085,12 +1097,14 @@
           },
           //Needs five keys
           {
-            "name":"Big key",
+            "name":"Big key Chest",
             "access_rules":["bombs,sword5,spinattack,cape,boomerang,dhc_smallkey:5",
 	       "bombs,sword5,spinattack,cape,bow,dhc_smallkey:5",
 	       "bombs,sword5,spinattack,cape,swordbeam,dhc_smallkey:5",
 	       "bombs,sword5,spinattack,cape,perilbeam,dhc_smallkey:5"],
-	    "hosted_item": "dhc_bigkey"
+            "item_count": 1,
+            "chest_unopened_img":"images/Big Chest.png",
+            "chest_opened_img":"images/Big Chest open.png"
           },
           //Needs big key
           {

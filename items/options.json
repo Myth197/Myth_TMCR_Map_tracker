@@ -7,7 +7,8 @@
     "stages":[
       {
         "img":"images/Obscure_Off.png",
-        "codes":"obscure_off"
+        "codes":"obscure_off",
+        "inherit_codes":false
       },
       {
         "img":"images/Obscure_On.png",
@@ -51,7 +52,8 @@
     "stages":[
       {
         "img": "images/Rando_Off.png",
-        "codes": "rando"
+        "codes": "rando",
+        "inherit_codes":false
       },
       {
         "img": "images/Rando_On.png",
@@ -73,7 +75,8 @@
       },
       {
         "img": "images/Fusions_None.png",
-        "codes": "fusions_closed"
+        "codes": "fusions_closed",
+	"inherit_codes":false
       },
       {
 	"img": "images/Fusions_V.png",
@@ -95,7 +98,8 @@
       },
       {
         "img": "images/Rupee_Mania_Off.png",
-        "codes": "rupee_mania_off"
+        "codes": "rupee_mania_off",
+        "inherit_codes":false
       }
     ]
   },
@@ -107,7 +111,8 @@
     "stages": [
       {
         "img": "images/weapons_off.png",
-        "codes": "weapons_off"
+        "codes": "weapons_off",
+        "inherit_codes":false
       },
       {
         "img":"images/weapons_on.png",

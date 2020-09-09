@@ -2,7 +2,7 @@
 Myth197's Minish Cap Randomizer Tracker
 
 ----- INSTALATION--------
-To use it, extract and place the files in C:\Users__\Documents\EmoTracker\packs
+To use it, place the files in C:\Users__\Documents\EmoTracker\packs
 then reload emotracker and then select it from installed packages.
 
 
