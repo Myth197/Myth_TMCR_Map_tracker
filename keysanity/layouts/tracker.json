@@ -4,12 +4,12 @@
         "h_alignment": "center",
         "item_margin": "1,2",
         "rows": [
-            [	"sword",	"gust",		"cane",			"boomerang",	"spinattack",	"rockbreaker",	"earth",	"dws_e",	"dws_bigkey",	"dws_smallkey",		],
-            [	"shield",	"mittsandfly",	"lamp",			"bombsremote",	"fastspin",	"dashattack",	"fire",		"cof_e",	"cof_bigkey",	"cof_smallkey",		],
-            [	"boots",	"cape",		"ocarina",		"bowandfly",	"fastsplit",	"downthrust",	"water",	"fow_e",	"fow_bigkey",	"fow_smallkey",		],
-            [	"carlovtingle",	"powergrips",	"flippersandfly",	"wilds",	"greatspin",	"rollattack",	"wind",		"tod_e",	"tod_bigkey",	"tod_smallkey",		],
-            [	"books",	"jabbershroom",	"bothkeys",		"clouds",	"longspin",	"swordbeam",	,		"pow_e",	"pow_bigkey",	"pow_smallkey",		],
-            [	"dogbottle",	"10hearts",	"wallet",		"falls",	"gomode",	"perilbeam",	"rc_smallkey",	"rc_e",		"dhc_bigkey_ks","dhc_smallkey_ks"	],
+            [	"sword",	"gust",		"cane",			"boomerang",	"spinattack",	"rockbreaker",	"earth",	"dws_e",	"dws_bigkey",	"dws_smallkey",	"dws_map",	"dws_compass"	],
+            [	"shield",	"mittsandfly",	"lamp",			"bombsremote",	"fastspin",	"dashattack",	"fire",		"cof_e",	"cof_bigkey",	"cof_smallkey",	"cof_map",	"cof_compass"	],
+            [	"boots",	"cape",		"ocarina",		"bowandfly",	"fastsplit",	"downthrust",	"water",	"fow_e",	"fow_bigkey",	"fow_smallkey",	"fow_map",	"fow_compass"	],
+            [	"carlovtingle",	"powergrips",	"flippersandfly",	"wilds",	"greatspin",	"rollattack",	"wind",		"tod_e",	"tod_bigkey",	"tod_smallkey",	"tod_map",	"tod_compass"	],
+            [	"books",	"jabbershroom",	"bothkeys",		"clouds",	"longspin",	"swordbeam",	,		"pow_e",	"pow_bigkey",	"pow_smallkey",	"pow_map",	"pow_compass"	],
+            [	"dogbottle",	"10hearts",	"wallet",		"falls",	"gomode",	"perilbeam",	"rc_smallkey",	"rc_e",		"dhc_bigkey_ks","dhc_smallkey_ks",	"dhc_map",	"dhc_compass"	],
         ]
     },
     "tracker_capture_item": {
@@ -24,7 +24,7 @@
             [	"boots",	"cape",		"ocarina",	"bow",			"butterfly",	"books",	"water"	],
             [	"bottle",	"grip",		"bracelets",	"flippers",		"carlov",	"trophy",	"wind"	],
             [	"dogfood",	"jabber",	"mushroom",	"llrkey",		"gravekey",	"smallkey",	"bigkey"],
-	    [	"hp",		"hc",		"figurine",	,			,		,		,	]
+	    [	"hp",		"hc",		"figurine",	,			,		"map",		"compass"]
             ]
         }
     },

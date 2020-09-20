@@ -14,6 +14,20 @@
     "codes": "dws_smallkey",
     "max_quantity": 4
   },
+  // DWS Map
+  {    
+    "name": "Deepwood Shrine Map",
+    "type": "toggle",
+    "img": "images/Map.png",
+    "codes": "dws_map"
+  },
+  // DWS Compass
+  {    
+    "name": "Deepwood Shrine Compass",
+    "type": "toggle",
+    "img": "images/Compass.png",
+    "codes": "dws_compass"
+  },
   // CoF Big Key
   {
     "name": "Cave of Flames Big Key",
@@ -28,6 +42,20 @@
     "img": "images/Small Key.png",
     "codes": "cof_smallkey",
     "max_quantity": 2
+  },
+  // CoF Map
+  {    
+    "name": "Cave of Flames Map",
+    "type": "toggle",
+    "img": "images/Map.png",
+    "codes": "cof_map"
+  },
+  // CoF Compass
+  {    
+    "name": "Cave of Flames Compass",
+    "type": "toggle",
+    "img": "images/Compass.png",
+    "codes": "cof_compass"
   },
   // FoW Big Key
   {
@@ -44,6 +72,20 @@
     "codes": "fow_smallkey",
     "max_quantity": 4
   },
+  // FoW Map
+  {    
+    "name": "Fortress of Winds Map",
+    "type": "toggle",
+    "img": "images/Map.png",
+    "codes": "fow_map"
+  },
+  // FoW Compass
+  {    
+    "name": "Fortress of Winds Compass",
+    "type": "toggle",
+    "img": "images/Compass.png",
+    "codes": "fow_compass"
+  },
   // ToD Big Key
   {
     "name": "Temple of Droplets Big Key",
@@ -59,6 +101,20 @@
     "codes": "tod_smallkey",
     "max_quantity": 4
   },
+  // ToD Map
+  {    
+    "name": "Temple of Droplets Map",
+    "type": "toggle",
+    "img": "images/Map.png",
+    "codes": "tod_map"
+  },
+  // ToD Compass
+  {    
+    "name": "Temple of Droplets Compass",
+    "type": "toggle",
+    "img": "images/Compass.png",
+    "codes": "tod_compass"
+  },
   // PoW Big Key
   {
     "name": "Palace of Winds Big Key",
@@ -73,6 +129,20 @@
     "img": "images/Small Key.png",
     "codes": "pow_smallkey",
     "max_quantity": 6
+  },
+  // PoW Map
+  {    
+    "name": "Palace of Winds Map",
+    "type": "toggle",
+    "img": "images/Map.png",
+    "codes": "pow_map"
+  },
+  // PoW Compass
+  {    
+    "name": "Palace of Winds Compass",
+    "type": "toggle",
+    "img": "images/Compass.png",
+    "codes": "pow_compass"
   },
   // DHC Big Key
   {
@@ -104,6 +174,20 @@
     "codes": "dhc_smallkey_ks",
     "max_quantity": 5
   },
+  // DHC Map
+  {    
+    "name": "Dark Hyrule Castle Map",
+    "type": "toggle",
+    "img": "images/Map.png",
+    "codes": "dhc_map"
+  },
+  // DHC Compass
+  {    
+    "name": "Dark Hyrule Castle Compass",
+    "type": "toggle",
+    "img": "images/Compass.png",
+    "codes": "dhc_compass"
+  },
   // Royal Crypt Keys
   {
     "name": "Royal Crypt Key",
@@ -125,5 +209,19 @@
     "type": "toggle",
     "img": "images/Small Key.png",
     "codes": "smallkey"
+  },
+  //Generic Map
+  {
+    "name": "Generic Map",
+    "type": "toggle",
+    "img": "images/Map.png",
+    "codes": "map"
+  },
+  //Generic Compass
+  {
+    "name": "Generic Compass",
+    "type": "toggle",
+    "img": "images/Compass.png",
+    "codes": "compass"
   },
 ]

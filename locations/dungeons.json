@@ -38,6 +38,14 @@
 	    "hosted_item": "dws_smallkey"
           },
           {
+            "name":"Map",
+	    "hosted_item": "dws_map"
+          },
+          {
+            "name":"Compass",
+	    "hosted_item": "dws_compass"
+          },
+          {
             "name":"Upstairs Chest",
             "access_rules": ["gust","lamp"],
             "item_count": 1
@@ -196,6 +204,14 @@
           {
             "name":"Small keys",
 	    "hosted_item": "cof_smallkey"
+          },
+          {
+            "name":"Map",
+	    "hosted_item": "cof_map"
+          },
+          {
+            "name":"Compass",
+	    "hosted_item": "cof_compass"
           },
           {
             "name":"Spiny Beetle Fight (Weapon)",
@@ -413,6 +429,14 @@
 	    "hosted_item": "fow_smallkey"
           },
           {
+            "name":"Map",
+	    "hosted_item": "fow_map"
+          },
+          {
+            "name":"Compass",
+	    "hosted_item": "fow_compass"
+          },
+          {
             "name":"Entrance Far Left",
             "access_rules": ["mitts"],
             "item_count": 1,
@@ -617,6 +641,14 @@
           {
             "name":"Small keys",
 	    "hosted_item": "tod_smallkey"
+          },
+          {
+            "name":"Map",
+	    "hosted_item": "tod_map"
+          },
+          {
+            "name":"Compass",
+	    "hosted_item": "tod_compass"
           },
           {
             "name":"Small Key Locked Ice Block",
@@ -866,6 +898,14 @@
 	    "hosted_item": "pow_smallkey"
           },
           {
+            "name":"Map",
+	    "hosted_item": "pow_map"
+          },
+          {
+            "name":"Compass",
+	    "hosted_item": "pow_compass"
+          },
+          {
             "name":"Firebar Grate",
             "access_rules": ["cape"],
             "item_count": 1
@@ -1016,6 +1056,14 @@
           {
             "name":"Big key",
 	    "hosted_item": "dhc_bigkey"
+          },
+          {
+            "name":"Map",
+	    "hosted_item": "dhc_map"
+          },
+          {
+            "name":"Compass",
+	    "hosted_item": "dhc_compass"
           },
               {
                 "name":"2 Element Fusion",
