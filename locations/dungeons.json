@@ -747,13 +747,13 @@
           //EVERYTHING ELSE NEEDS GUST/FLIPPERS OR LAMP
           {
             "name":"Right Path Ice Walkway Chests",
-            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1","lamp"],
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1,[tod_smallkey:2]","lamp"],
 	    "clear_as_group": false,
             "item_count": 2
           },
           {
             "name":"Right Path Ice Walkway Pot",
-            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1","lamp"],
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1,[tod_smallkey:2]","lamp"],
             "item_count": 1,
             "chest_unopened_img":"images/pot.png",
             "chest_opened_img":"images/pot Gray.png",
@@ -761,7 +761,7 @@
           },
           {
             "name":"Blue Chu Frozen Chest",
-            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1","lamp"],
+            "access_rules":["gust,flippers,sword3,spinattack,tod_smallkey:1,[tod_smallkey:2]","lamp"],
             "item_count": 1,
             "chest_unopened_img":"images/chest_frozen.png"
           },

@@ -2,7 +2,10 @@
 TMC_AUTOTRACKER_DEBUG = true
 BOW_VALUE = 0
 WildsFused = 0
+WildsBag = 0
 CloudsFused = 0
+CloudsBag = 0
+KEY_STOLEN = false
 ---------------------------------------
 
 print("")
@@ -21,21 +24,21 @@ function autotracker_started()
   KEY_STOLEN = false
 
   DWS_KEY_COUNT = 0
-  DWS_KEY_PREV_VALUE = 0
+  DWS_KEY_USED = 0
   COF_KEY_COUNT = 0
-  COF_KEY_PREV_VALUE = 0
+  COF_KEY_USED = 0
   FOW_KEY_COUNT = 0
-  FOW_KEY_PREV_VALUE = 0
+  FOW_KEY_USED = 0
   TOD_KEY_COUNT = 0
-  TOD_KEY_PREV_VALUE = 0
+  TOD_KEY_USED = 0
   POW_KEY_COUNT = 0
-  POW_KEY_PREV_VALUE = 0
+  POW_KEY_USED = 0
   DHC_KEY_COUNT = 0
-  DHC_KEY_PREV_VALUE = 0
+  DHC_KEY_USED = 0
   DHCKS_KEY_COUNT = 0
-  DHCKS_KEY_PREV_VALUE = 0
+  DHCKS_KEY_USED = 0
   RC_KEY_COUNT = 0
-  RC_KEY_PREV_VALUE = 0
+  RC_KEY_USED = 0
 end
 
 U8_READ_CACHE = 0
@@ -256,8 +259,8 @@ function updateGraveKey(segment, code, address, flag)
 
     local flagTest = value or flag
 
-    if testFlag(segment, address, 0x01) and KEY_STOLEN == true or
-       testFlag(segment, address, 0x02) and KEY_STOLEN == true then
+    if testFlag(segment, address, 0x01) or
+       testFlag(segment, address, 0x02) then
       item.Active = true
     end
   end
@@ -446,7 +449,7 @@ function updateWildsUsedFixed(segment, locationData)
   local item = Tracker:FindObjectForCode("wilds")
   if item then
     WildsFused = 0
-    for i=1, 3, 1 do
+    for i=1, #locationData, 1 do
       local address = locationData[i][1]
       local flag = locationData[i][2]
       local value = ReadU8(segment,address)
@@ -457,61 +460,63 @@ function updateWildsUsedFixed(segment, locationData)
         WildsFused = WildsFused + 1
       end
     end
+    item.AcquiredCount = WildsFused + WildsBag
     print("Wilds Used", WildsFused)
   end
 end
 
-function updateWilds(segment, code, flag, numUsed)
+function updateWilds(segment, code, flag)
   local item = Tracker:FindObjectForCode(code)
-  local inBag = 0
 
   if ReadU8(segment, 0x2002b58) == flag then
-    inBag = ReadU8(segment, 0x2002b6b)
+    WildsBag = ReadU8(segment, 0x2002b6b)
     print("Wilds in Bag", ReadU8(segment, 0x2002b6b))
 
   elseif ReadU8(segment, 0x2002b59) == flag then
-    inBag = ReadU8(segment, 0x2002b6c)
+    WildsBag = ReadU8(segment, 0x2002b6c)
     print("Wilds in Bag", ReadU8(segment, 0x2002b6c))
 
   elseif ReadU8(segment, 0x2002b5a) == flag then
-    inBag = ReadU8(segment, 0x2002b6d)
+    WildsBag = ReadU8(segment, 0x2002b6d)
     print("Wilds in Bag", ReadU8(segment, 0x2002b6d))
 
   elseif ReadU8(segment, 0x2002b5b) == flag then
-    inBag = ReadU8(segment, 0x2002b6e)
+    WildsBag = ReadU8(segment, 0x2002b6e)
     print("Wilds in Bag", ReadU8(segment, 0x2002b6e))
 
   elseif ReadU8(segment, 0x2002b5c) == flag then
-    inBag = ReadU8(segment, 0x2002b6f)
+    WildsBag = ReadU8(segment, 0x2002b6f)
     print("Wilds in Bag", ReadU8(segment, 0x2002b6f))
 
   elseif ReadU8(segment, 0x2002b5d) == flag then
-    inBag = ReadU8(segment, 0x2002b70)
+    WildsBag = ReadU8(segment, 0x2002b70)
     print("Wilds in Bag", ReadU8(segment, 0x2002b70))
 
   elseif ReadU8(segment, 0x2002b5e) == flag then
-    inBag = ReadU8(segment, 0x2002b71)
+    WildsBag = ReadU8(segment, 0x2002b71)
     print("Wilds in Bag", ReadU8(segment, 0x2002b71))
 
   elseif ReadU8(segment, 0x2002b5f) == flag then
-    inBag = ReadU8(segment, 0x2002b72)
+    WildsBag = ReadU8(segment, 0x2002b72)
     print("Wilds in Bag", ReadU8(segment, 0x2002b72))
 
   elseif ReadU8(segment, 0x2002b60) == flag then
-    inBag = ReadU8(segment, 0x2002b73)
+    WildsBag = ReadU8(segment, 0x2002b73)
     print("Wilds in Bag", ReadU8(segment, 0x2002b73))
 
   elseif ReadU8(segment, 0x2002b61) == flag then
-    inBag = ReadU8(segment, 0x2002b74)
+    WildsBag = ReadU8(segment, 0x2002b74)
     print("Wilds in Bag", ReadU8(segment, 0x2002b74))
 
   elseif ReadU8(segment, 0x2002b62) == flag then
-    inBag = ReadU8(segment, 0x2002b75)
+    WildsBag = ReadU8(segment, 0x2002b75)
     print("Wilds in Bag", ReadU8(segment, 0x2002b75))
+  else
+	WildsBag = 0
   end
 
-  item.AcquiredCount = numUsed + inBag
-  print("Wilds Obtained", inBag)
+  item.AcquiredCount = WildsFused + WildsBag
+  print("Wilds Obtained", WildsBag)
 end
 
 function updateCloudsUsedFixed(segment, locationData)
@@ -535,54 +540,55 @@ end
 
 function updateClouds(segment, code, flag)
   local item = Tracker:FindObjectForCode(code)
-  local inBag = 0
 
   if ReadU8(segment, 0x2002b58) == flag then
-    inBag = ReadU8(segment, 0x2002b6b)
+    CloudsBag = ReadU8(segment, 0x2002b6b)
     print("Clouds in Bag", ReadU8(segment, 0x2002b6b))
 
   elseif ReadU8(segment, 0x2002b59) == flag then
-    inBag = ReadU8(segment, 0x2002b6c)
+    CloudsBag = ReadU8(segment, 0x2002b6c)
     print("Clouds in Bag", ReadU8(segment, 0x2002b6c))
 
   elseif ReadU8(segment, 0x2002b5a) == flag then
-    inBag = ReadU8(segment, 0x2002b6d)
+    CloudsBag = ReadU8(segment, 0x2002b6d)
     print("Clouds in Bag", ReadU8(segment, 0x2002b6d))
 
   elseif ReadU8(segment, 0x2002b5b) == flag then
-    inBag = ReadU8(segment, 0x2002b6e)
+    CloudsBag = ReadU8(segment, 0x2002b6e)
     print("Clouds in Bag", ReadU8(segment, 0x2002b6e))
 
   elseif ReadU8(segment, 0x2002b5c) == flag then
-    inBag = ReadU8(segment, 0x2002b6f)
+    CloudsBag = ReadU8(segment, 0x2002b6f)
     print("Clouds in Bag", ReadU8(segment, 0x2002b6f))
 
   elseif ReadU8(segment, 0x2002b5d) == flag then
-    inBag = ReadU8(segment, 0x2002b70)
+    CloudsBag = ReadU8(segment, 0x2002b70)
     print("Clouds in Bag", ReadU8(segment, 0x2002b70))
 
   elseif ReadU8(segment, 0x2002b5e) == flag then
-    inBag = ReadU8(segment, 0x2002b71)
+    CloudsBag = ReadU8(segment, 0x2002b71)
     print("Clouds in Bag", ReadU8(segment, 0x2002b71))
 
   elseif ReadU8(segment, 0x2002b5f) == flag then
-    inBag = ReadU8(segment, 0x2002b72)
+    CloudsBag = ReadU8(segment, 0x2002b72)
     print("Clouds in Bag", ReadU8(segment, 0x2002b72))
 
   elseif ReadU8(segment, 0x2002b60) == flag then
-    inBag = ReadU8(segment, 0x2002b73)
+    CloudsBag = ReadU8(segment, 0x2002b73)
     print("Clouds in Bag", ReadU8(segment, 0x2002b73))
 
   elseif ReadU8(segment, 0x2002b61) == flag then
-    inBag = ReadU8(segment, 0x2002b74)
+    CloudsBag = ReadU8(segment, 0x2002b74)
     print("Clouds in Bag", ReadU8(segment, 0x2002b74))
 
   elseif ReadU8(segment, 0x2002b62) == flag then
-    inBag = ReadU8(segment, 0x2002b75)
+    CloudsBag = ReadU8(segment, 0x2002b75)
     print("Clouds in Bag", ReadU8(segment, 0x2002b75))
-  end
+  else
+	CloudBag = 0
+  end   
 
-  item.AcquiredCount = inBag + CloudsFused
+  item.AcquiredCount = CloudsBag + CloudsFused
 
   print("Clouds Obtained", CloudsFused)
 end
@@ -597,53 +603,136 @@ end
 function updateSmallKeys(segment, code, address)
   local item = Tracker:FindObjectForCode(code)
   if code == "dws_smallkey" then
-    if ReadU8(segment, address) > DWS_KEY_PREV_VALUE then
-      DWS_KEY_COUNT = DWS_KEY_COUNT + 1
-      item.AcquiredCount = DWS_KEY_COUNT
-    end
-    DWS_KEY_PREV_VALUE = ReadU8(segment, address)
+	DWS_KEY_USED = 0
+	  if testFlag(segment, 0x2002d3f, 0x40) then
+	DWS_KEY_USED = DWS_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d41, 0x04) then
+	DWS_KEY_USED = DWS_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d43, 0x10) then
+	DWS_KEY_USED = DWS_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d44, 0x20) then
+	DWS_KEY_USED = DWS_KEY_USED + 1
+	  end
+      DWS_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = DWS_KEY_COUNT + DWS_KEY_USED
   elseif code == "cof_smallkey" then
-    if ReadU8(segment, address) > COF_KEY_PREV_VALUE then
-      COF_KEY_COUNT = COF_KEY_COUNT + 1
-      item.AcquiredCount = COF_KEY_COUNT
-    end
-    COF_KEY_PREV_VALUE = ReadU8(segment, address)
+      COF_KEY_USED = 0
+	  if testFlag(segment, 0x2002d56, 0x10) then
+	COF_KEY_USED = COF_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d57, 0x20) then
+	COF_KEY_USED = COF_KEY_USED + 1
+	  end
+      COF_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = COF_KEY_COUNT + COF_KEY_USED
   elseif code == "fow_smallkey" then
-    if ReadU8(segment, address) > FOW_KEY_PREV_VALUE then
-      FOW_KEY_COUNT = FOW_KEY_COUNT + 1
-      item.AcquiredCount = FOW_KEY_COUNT
-    end
-    FOW_KEY_PREV_VALUE = ReadU8(segment, address)
+      FOW_KEY_USED = 0
+	  if testFlag(segment, 0x2002d6f, 0x20) then
+	FOW_KEY_USED = FOW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d71, 0x10) then
+	FOW_KEY_USED = FOW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d72, 0x40) then
+	FOW_KEY_USED = FOW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d72, 0x80) then
+	FOW_KEY_USED = FOW_KEY_USED + 1
+	  end
+      FOW_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = FOW_KEY_COUNT + FOW_KEY_USED
   elseif code == "tod_smallkey" then
-    if ReadU8(segment, address) > TOD_KEY_PREV_VALUE then
-      TOD_KEY_COUNT = TOD_KEY_COUNT + 1
-      item.AcquiredCount = TOD_KEY_COUNT
-    end
-    TOD_KEY_PREV_VALUE = ReadU8(segment, address)
+      TOD_KEY_USED = 0
+	  if testFlag(segment, 0x2002d89, 0x04) then
+	TOD_KEY_USED = TOD_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d8a, 0x01) then
+	TOD_KEY_USED = TOD_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d8c, 0x02) then
+	TOD_KEY_USED = TOD_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d90, 0x08) then
+	TOD_KEY_USED = TOD_KEY_USED + 1
+	  end
+      TOD_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = TOD_KEY_COUNT + TOD_KEY_USED
   elseif code == "pow_smallkey" then
-    if ReadU8(segment, address) > POW_KEY_PREV_VALUE then
-      POW_KEY_COUNT = POW_KEY_COUNT + 1
-      item.AcquiredCount = POW_KEY_COUNT
-    end
-    POW_KEY_PREV_VALUE = ReadU8(segment, address)
+      POW_KEY_USED = 0
+	  if testFlag(segment, 0x2002da3, 0x10) then
+	POW_KEY_USED = POW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002da3, 0x80) then
+	POW_KEY_USED = POW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002da5, 0x04) then
+	POW_KEY_USED = POW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002da5, 0x08) then
+	POW_KEY_USED = POW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002da6, 0x08) then
+	POW_KEY_USED = POW_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002da9, 0x04) then
+	POW_KEY_USED = POW_KEY_USED + 1
+	  end
+      POW_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = POW_KEY_COUNT + POW_KEY_USED
   elseif code == "dhc_smallkey" then
-    if ReadU8(segment, address) > DHC_KEY_PREV_VALUE then
-      DHC_KEY_COUNT = DHC_KEY_COUNT + 1
-      item.AcquiredCount = DHC_KEY_COUNT
-    end
-    DHC_KEY_PREV_VALUE = ReadU8(segment, address)
+      DHC_KEY_USED = 0
+	  if testFlag(segment, 0x2002dbb, 0x20) then
+	DHC_KEY_USED = DHC_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x10) then
+	DHC_KEY_USED = DHC_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x20) then
+	DHC_KEY_USED = DHC_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x40) then
+	DHC_KEY_USED = DHC_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x80) then
+	DHC_KEY_USED = DHC_KEY_USED + 1
+	  end
+      DHC_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = DHC_KEY_COUNT + DHC_KEY_USED
   elseif code == "dhc_smallkey_ks" then
-    if ReadU8(segment, address) > DHCKS_KEY_PREV_VALUE then
-      DHCKS_KEY_COUNT = DHCKS_KEY_COUNT + 1
-      item.AcquiredCount = DHCKS_KEY_COUNT
-    end
-    DHCKS_KEY_PREV_VALUE = ReadU8(segment, address)
+      DHCKS_KEY_USED = 0
+	  if testFlag(segment, 0x2002dbb, 0x20) then
+	DHCKS_KEY_USED = DHCKS_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x10) then
+	DHCKS_KEY_USED = DHCKS_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x20) then
+	DHCKS_KEY_USED = DHCKS_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x40) then
+	DHCKS_KEY_USED = DHCKS_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002dbc, 0x80) then
+	DHCKS_KEY_USED = DHCKS_KEY_USED + 1
+	  end
+      DHCKS_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = DHCKS_KEY_COUNT + DHCKS_KEY_USED
   elseif code == "rc_smallkey" then
-    if ReadU8(segment, address) > RC_KEY_PREV_VALUE then
-      RC_KEY_COUNT = RC_KEY_COUNT + 1
-      item.AcquiredCount = RC_KEY_COUNT
-    end
-    RC_KEY_PREV_VALUE = ReadU8(segment, address)
+      RC_KEY_USED = 0
+	  if testFlag(segment, 0x2002d00, 0x80) then
+	RC_KEY_USED = RC_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d01, 0x01) then
+	RC_KEY_USED = RC_KEY_USED + 1
+	  end
+	  if testFlag(segment, 0x2002d12, 0x08) then
+	RC_KEY_USED = RC_KEY_USED + 1
+	  end
+      RC_KEY_COUNT = ReadU8(segment, address)
+      item.AcquiredCount = RC_KEY_COUNT + RC_KEY_USED
   else
     item.AcquiredCount = 0
   end
@@ -981,7 +1070,7 @@ function updateLocations(segment)
   updateSectionChestCountFromByteAndFlag(segment, "@Dampe/Dampe", 0x2002ce9, 0x02)
   updateSectionChestCountFromByteAndFlag(segment, "@Great Fairy/Great Fairy", 0x2002cef, 0x40)
   updateSectionChestCountFromByteAndFlag(segment, "@Royal Crypt/King Gustaf", 0x2002d02, 0x04)
-  decreaseChestCount(segment, "@Royal Crypt/Key drops", {{0x2002d12, 0x40},{0x2002d12, 0x80}})
+  decreaseChestCount(segment, "@Royal Crypt/Key drops", {{0x2002d12, 0x10},{0x2002d12, 0x20}})
   decreaseChestCount(segment, "@Royal Crypt/Gibdos", {{0x2002d14, 0x10},{0x2002d14, 0x20}})
   updateSectionChestCountFromByteAndFlag(segment, "@Northwest Grave Area/Northwest Grave", 0x2002d27, 0x20)
   updateSectionChestCountFromByteAndFlag(segment, "@Northeast Grave Area/Northeast Grave", 0x2002d27, 0x40)
@@ -1374,4 +1463,4 @@ ScriptHost:AddMemoryWatch("TMC Locations and Bosses", 0x2002c81, 0x200, updateLo
 ScriptHost:AddMemoryWatch("TMC Item Data", 0x2002b30, 0x45, updateItemsFromMemorySegment)
 ScriptHost:AddMemoryWatch("TMC Item Upgrades", 0x2002ae4, 0x0c, updateGearFromMemory)
 ScriptHost:AddMemoryWatch("Graveyard Key", 0x2002ac0, 0x01, graveKey)
-ScriptHost:AddMemoryWatch("TMC Keys", 0x2002e9d, 0x16, updateKeys)
+ScriptHost:AddMemoryWatch("TMC Keys", 0x2002d00, 0x200, updateKeys)

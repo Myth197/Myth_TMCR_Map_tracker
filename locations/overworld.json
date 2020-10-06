@@ -897,7 +897,8 @@
                       {
                         "map":"map",
                         "x":75,
-                        "y":1700
+                        "y":1700,
+			"visibility_rules":[]
                       }
                     ],
                     "sections":[
