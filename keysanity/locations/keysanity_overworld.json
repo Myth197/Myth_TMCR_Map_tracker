@@ -2786,7 +2786,7 @@
                 ]
               },
               {
-                "name":"Southeast North Digging Spot",
+                "name":"Southeast South Digging Spot",
                 "access_rules":["mitts"],
                 "map_locations": [
                   {
@@ -2804,7 +2804,7 @@
                 ]
               },
               {
-                "name":"Southeast South Digging Spot",
+                "name":"Southeast North Digging Spot",
                 "access_rules":["mitts"],
                 "map_locations": [
                   {

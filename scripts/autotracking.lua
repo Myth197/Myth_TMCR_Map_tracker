@@ -993,6 +993,10 @@ function updateLocations(segment)
   if not AUTOTRACKER_ENABLE_LOCATION_TRACKING then
     return true
   end
+  --KEY LOGIC
+  
+
+
 
   --FUSIONS
   updateSectionChestCountFromByteAndFlag(segment, "@Top Right Fusion/Top Right Fusion", 0x2002c81, 0x02)
